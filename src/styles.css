@@ -13,6 +13,14 @@
   }
 }
 
+.bg-primary {
+  background-color: #355e3b;
+}
+
+.border-1 {
+  border-width: 1px;
+}
+
 .growing-underline {
   display: block;
   position: relative;
