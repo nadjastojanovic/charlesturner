@@ -26,4 +26,10 @@ window.addEventListener("load", function () {
       }
     });
   });
+
+  document.querySelectorAll("#mobileNav a[href^='#']").forEach((link) => {
+    link.addEventListener("click", function () {
+      document.querySelector("#mobileNav").classList.add("hidden");
+    });
+  });
 });

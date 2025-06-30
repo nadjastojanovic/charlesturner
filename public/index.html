@@ -202,10 +202,10 @@
     </section>
 
     <!-- Start of Meet Your Tutor section-->
-    <section id="about" class="bg-primary text-white sectionSize">
+    <section id="about" class="bg-primary text-white sectionSize pb-12">
       <div>
         <h2
-          class="secondaryTitle bg-underline2 bg-100%"
+          class="secondaryTitle bg-underline2 bg-100% text-center"
           data-i18n="meetYourTutor.h2"
         >
           Seznamte se se svým učitelem
@@ -382,7 +382,9 @@
         </h2>
       </div>
       <div class="md:grid md:grid-cols-2 md:grid-rows-2 px-12">
-        <div class="flex items-start font-montserrat my-6 mr-10">
+        <div
+          class="flex items-start font-montserrat my-6 mr-0 md:mr-10 lg:mr-10"
+        >
           <i class="fa-solid fa-crown py-3 pr-4"></i>
           <div>
             <h3 class="font-semibold text-2xl" data-i18n="whyChooseMe.oneh3">
@@ -396,7 +398,9 @@
           </div>
         </div>
 
-        <div class="flex items-start font-montserrat my-6 mr-10">
+        <div
+          class="flex items-start font-montserrat my-6 mr-0 md:mr-10 lg:mr-10"
+        >
           <i class="fa-solid fa-child-reaching py-3 pr-5"></i>
           <div>
             <h3 class="font-semibold text-2xl" data-i18n="whyChooseMe.twoh3">
@@ -410,7 +414,9 @@
           </div>
         </div>
 
-        <div class="flex items-start font-montserrat my-6 mr-10">
+        <div
+          class="flex items-start font-montserrat my-6 mr-0 md:mr-10 lg:mr-10"
+        >
           <i class="fa-solid fa-globe py-3 pr-4"></i>
           <div>
             <h3 class="font-semibold text-2xl" data-i18n="whyChooseMe.threeh3">
@@ -424,7 +430,9 @@
           </div>
         </div>
 
-        <div class="flex items-start font-montserrat my-6 mr-10">
+        <div
+          class="flex items-start font-montserrat my-6 mr-0 md:mr-10 lg:mr-10"
+        >
           <i class="fa-solid fa-language py-3 pr-4"></i>
           <div>
             <h3 class="font-semibold text-2xl" data-i18n="whyChooseMe.fourh3">
@@ -755,7 +763,7 @@
         </a>
       </div>
       <div
-        class="w-full flex justify-between items-center text-white font-montserrat text-sm"
+        class="w-full flex flex-col md:flex-row justify-between items-center text-white font-montserrat text-sm space-y-2 md:space-y-0"
       >
         <p data-i18n="footer.copy">
           © 2025 Charles Turner. Všechna práva vyhrazena.
@@ -772,9 +780,8 @@
     <script>
       const toggle = document.getElementById("langToggle");
       const ball = document.getElementById("toggleBall");
-      let currentLang = "cs"; // default: Czech
+      let currentLang = "cs";
 
-      // Helper to resolve "nav.about" → translations[lang]["nav"]["about"]
       function getTranslation(lang, keyPath) {
         return keyPath
           .split(".")
@@ -816,11 +823,15 @@
     <script>
       const toggleMobile = document.getElementById("langToggleMobile");
       const ballMobile = document.getElementById("toggleBallMobile");
-      let isCheckedMobile = true;
 
-      toggleMobile.addEventListener("click", () => {
-        isCheckedMobile = !isCheckedMobile;
-        if (isCheckedMobile) {
+      function getTranslation(lang, keyPath) {
+        return keyPath
+          .split(".")
+          .reduce((obj, key) => obj?.[key], window.translations?.[lang]);
+      }
+
+      function updateToggleUI(lang) {
+        if (lang === "cs") {
           toggleMobile.classList.remove("bg-gray");
           toggleMobile.classList.add("bg-primary");
           ballMobile.classList.remove("left-0.5");
@@ -831,7 +842,24 @@
           ballMobile.classList.remove("right-0.5");
           ballMobile.classList.add("left-0.5");
         }
-      });
+      }
+
+      function translatePage(lang) {
+        const elements = document.querySelectorAll("[data-i18n]");
+        elements.forEach((el) => {
+          const key = el.getAttribute("data-i18n");
+          const text = getTranslation(lang, key);
+          if (text) el.textContent = text;
+        });
+      }
+
+      function switchLanguage() {
+        currentLang = currentLang === "cs" ? "en" : "cs";
+        updateToggleUI(currentLang);
+        translatePage(currentLang);
+      }
+
+      toggleMobile.addEventListener("click", switchLanguage);
     </script>
   </body>
 </html>
