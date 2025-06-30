@@ -624,8 +624,8 @@ video {
 
 @media (min-width: 1024px){
   .sectionSize{
-    padding-left: 12rem;
-    padding-right: 12rem;
+    padding-left: 6rem;
+    padding-right: 6rem;
   }
 }
 
@@ -17537,6 +17537,14 @@ video {
 
 .bg-primary {
   background-color: #355e3b;
+}
+
+.bg-secondary {
+  background-color: #F4F2ED;
+}
+
+.bg-gray {
+  background-color: #ccc;
 }
 
 .growing-underline {

@@ -6,7 +6,7 @@
 
 @layer components {
   .sectionSize {
-    @apply lg:px-48 md:px-12 px-4 py-14 flex flex-col items-center;
+    @apply lg:px-48 md:px-6 px-4 py-14 flex flex-col items-center !important;
   }
   .secondaryTitle {
     @apply font-pt-serif text-3xl bg-left-bottom bg-no-repeat pb-8 px-16 mb-8;
@@ -17,8 +17,8 @@
   background-color: #355e3b;
 }
 
-.border-1 {
-  border-width: 1px;
+.border-black {
+  border-color: black;
 }
 
 .growing-underline {

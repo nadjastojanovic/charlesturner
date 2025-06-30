@@ -7,7 +7,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <meta name="language" content="en,cs" />
+    <meta name="language" content="cs,en" />
     <link rel="canonical" href="https://yourdomain.com/" />
     <!-- TO CHANGE: update domain -->
 
@@ -40,50 +40,44 @@
   <body>
     <!-- Navigation -->
     <nav
-      class="fixed flex justify-between py-6 w-full lg:px-48 md:px-12 px-4 content-center bg-secondary z-10"
+      class="fixed flex justify-between py-6 w-full px-12 lg:px-48 md:px-12 px-4 content-center bg-secondary z-10"
     >
       <div class="flex items-center font-montserrat">
         <a href="#home" class="growing-underline">Charles Turner</a>
       </div>
       <ul class="font-montserrat items-center hidden md:flex">
         <li class="mx-3">
-          <a class="growing-underline" href="#about">About</a>
+          <a class="growing-underline" href="#about" data-i18n="nav.about"
+            >O mně</a
+          >
         </li>
         <li class="growing-underline mx-3">
-          <a href="#lesson-options">Lesson Options</a>
+          <a href="#lesson-options" data-i18n="nav.lessonOptions"
+            >Možnosti lekcí</a
+          >
         </li>
         <li class="growing-underline mx-3">
-          <a href="#contact">Contact</a>
+          <a href="#contact" data-i18n="nav.contact">Kontakt</a>
         </li>
       </ul>
-      <div class="font-montserrat hidden md:block">
-        <div class="flex">
-          <a href="tel:+420608406354" class="flex items-center gap-2">
-            <i
-              class="fa-solid fa-phone px-6 scale-100 transform transition-transform duration-300 hover:scale-125"
-            ></i>
-          </a>
+      <div class="flex hidden md:block">
+        <div class="flex items-center space-x-2">
+          <img src="dist/assets/logos/flag-en.png" alt="EN" class="w-6 h-4" />
 
-          <a
-            href="mailto:charlesturner002@gmail.com"
-            class="flex items-center gap-2"
+          <div
+            id="langToggle"
+            class="w-10 h-5 rounded-full bg-primary relative flex items-center transition-colors duration-300 cursor-pointer"
           >
-            <i
-              class="fa-solid fa-envelope px-6 scale-100 transform transition-transform duration-300 hover:scale-125"
-            ></i>
-          </a>
+            <div
+              id="toggleBall"
+              class="w-4 h-4 bg-white rounded-full shadow-md absolute right-0.5 transition-all duration-300"
+            ></div>
+          </div>
 
-          <a
-            href="https://wa.me/+38267017038"
-            target="_blank"
-            class="flex items-center gap-2"
-          >
-            <i
-              class="fa-brands fa-whatsapp px-6 scale-100 transform transition-transform duration-300 hover:scale-125"
-            ></i>
-          </a>
+          <img src="dist/assets/logos/flag-cz.png" alt="CZ" class="w-6 h-4" />
         </div>
       </div>
+
       <div id="showMenu" class="md:hidden">
         <img src="dist/assets/logos/Menu.svg" alt="Menu icon" />
       </div>
@@ -99,78 +93,123 @@
         class="font-montserrat flex flex-col mx-8 my-24 items-center text-3xl"
       >
         <li class="my-6">
-          <a href="#about">About</a>
+          <a href="#about" data-i18n="nav.about">About</a>
         </li>
         <li class="my-6">
-          <a href="#lesson-options">Lesson Options</a>
+          <a href="#lesson-options" data-i18n="nav.lessonOptions"
+            >Lesson Options</a
+          >
         </li>
         <li class="my-6">
-          <a href="#contact">Contact</a>
+          <a href="#contact" data-i18n="nav.contact">Contact</a>
+        </li>
+        <li>
+          <div class="flex">
+            <div class="flex items-center space-x-2">
+              <img
+                src="dist/assets/logos/flag-en.png"
+                alt="EN"
+                class="w-6 h-4"
+              />
+
+              <div
+                id="langToggleMobile"
+                class="w-10 h-5 rounded-full bg-primary relative flex items-center transition-colors duration-300 cursor-pointer"
+              >
+                <div
+                  id="toggleBallMobile"
+                  class="w-4 h-4 bg-white rounded-full shadow-md absolute right-0.5 transition-all duration-300"
+                ></div>
+              </div>
+
+              <img
+                src="dist/assets/logos/flag-cz.png"
+                alt="CZ"
+                class="w-6 h-4"
+              />
+            </div>
+          </div>
         </li>
       </ul>
     </div>
 
-    <!-- Hero -->
     <section
       id="home"
-      class="pt-24 md:mt-0 md:h-screen flex flex-col justify-center text-center md:text-left md:flex-row md:justify-between md:items-center lg:px-48 md:px-12 px-4 bg-secondary"
+      class="pt-24 md:mt-0 flex flex-col lg:h-screen lg:flex-row lg:justify-between lg:items-center text-center lg:text-left lg:px-48 md:px-12 px-4 bg-secondary"
     >
-      <div class="md:flex-1 md:mr-10">
-        <h1 class="font-montserrat text-5xl font-normal mb-7">
-          English lessons with a<br />
-          <span class="bg-underline1 bg-left-bottom bg-no-repeat pb-4 bg-100%">
-            native speaker
-          </span>
-          in Prague
+      <!-- TEXT BLOCK -->
+      <div class="flex-1 my-12 lg:my-0">
+        <h1
+          class="font-montserrat text-4xl md:text-5xl font-normal mb-7"
+          data-i18n="hero.h1"
+        >
+          Výuka angličtiny s
+          <span
+            class="bg-underline1 bg-left-bottom bg-no-repeat pb-2 md:pb-3 lg:pb-3 bg-100%"
+            >rodilým mluvčím</span
+          >
+          v Praze
         </h1>
-        <p class="font-pt-serif font-normal text-lg mb-7">
-          One-on-one English lessons for children and teens, combining a
-          structured approach with personalized support to help students grow
-          fluently and confidently at any level.
+        <p
+          class="font-pt-serif font-normal text-lg mb-7 max-w-2xl mx-auto lg:mx-0"
+          data-i18n="hero.p"
+        >
+          Individuální lekce angličtiny pro děti a dospívající, které kombinují
+          strukturovaný přístup s individuální podporou a pomáhají studentům
+          rozvíjet se plynule a sebejistě.
         </p>
-        <div class="font-montserrat">
+        <div
+          class="flex justify-center lg:justify-start flex-wrap gap-4 font-montserrat"
+        >
           <a href="#lesson-options">
             <button
-              class="px-6 py-4 border border-black border-solid rounded-lg mr-2 scale-100 transform transition-transform duration-300 hover:scale-105"
+              class="px-6 py-4 border border-black rounded-lg scale-100 transform transition-transform duration-300 hover:scale-105"
+              data-i18n="nav.lessonOptions"
             >
-              Lesson Options
+              Možnosti lekcí
             </button>
           </a>
           <a href="#contact">
             <button
-              class="bg-primary border border-black px-6 py-4 rounded-lg text-white scale-100 transform transition-transform duration-300 hover:scale-105"
+              class="bg-primary text-white border border-black px-6 py-4 rounded-lg scale-100 transform transition-transform duration-300 hover:scale-105"
+              data-i18n="nav.contact"
             >
-              Contact Me
+              Kontakt
             </button>
           </a>
         </div>
       </div>
-      <div class="flex justify-around md:block mt-8 md:mt-0 md:flex-2">
-        <div class="relative">
-          <img
-            src="dist/assets/Highlight1.svg"
-            alt=""
-            class="absolute -top-16 -left-10"
-          />
-        </div>
+
+      <div
+        class="flex-1 relative flex justify-center items-center mb-24 lg:mb-0"
+      >
         <img
           src="dist/assets/portrait.png"
+          class="mx-auto z-10"
           alt="Portrait of English tutor Charles Turner against a classroom backdrop"
         />
-        <div class="relative">
-          <img
-            src="dist/assets/Highlight2.svg"
-            alt=""
-            class="absolute -bottom-6 -right-8"
-          />
-        </div>
+        <img
+          src="dist/assets/Highlight1.svg"
+          alt=""
+          class="absolute w-12 -top-2 left-4 md:-top-10 lg:-top-10 md:left-16 lg:left-16 md:w-24 lg:w-24 md:w-auto"
+        />
+        <img
+          src="dist/assets/Highlight2.svg"
+          alt=""
+          class="absolute -bottom-8 md:-bottom-6 lg:-bottom-6 right-12 lg:right-20 md:right-20 w-8 md:w-16 lg:w-16 md:w-auto"
+        />
       </div>
     </section>
 
     <!-- Start of Meet Your Tutor section-->
     <section id="about" class="bg-primary text-white sectionSize">
       <div>
-        <h2 class="secondaryTitle bg-underline2 bg-100%">Meet Your Tutor</h2>
+        <h2
+          class="secondaryTitle bg-underline2 bg-100%"
+          data-i18n="meetYourTutor.h2"
+        >
+          Seznamte se se svým učitelem
+        </h2>
       </div>
 
       <div class="flex flex-col md:flex-row mt-10 gap-12">
@@ -184,14 +223,19 @@
               <i class="fa-solid fa-language"></i>
             </div>
             <div>
-              <h3 class="font-montserrat font-medium text-xl mb-2">
-                Bilingual upbringing
+              <h3
+                class="font-montserrat font-medium text-xl mb-2"
+                data-i18n="meetYourTutor.leftOneh3"
+              >
+                Dvojjazyčná výchova
               </h3>
-              <p class="text-left font-montserrat">
-                Born in Montenegro to a Montenegrin mother and an English
-                father, I grew up speaking both languages fluently. My
-                upbringing gave me a unique understanding of the language
-                learning process.
+              <p
+                class="text-left font-montserrat"
+                data-i18n="meetYourTutor.leftOnep"
+              >
+                Narodil jsem se v Černé Hoře černohorské matce a anglickému otci
+                a vyrůstal jsem v obou jazycích. Moje výchova mi dala jedinečné
+                pochopení procesu učení se jazykům.
               </p>
             </div>
           </div>
@@ -204,14 +248,20 @@
               <i class="fa-solid fa-chalkboard-user"></i>
             </div>
             <div>
-              <h3 class="font-montserrat font-medium text-xl mb-2">
-                Family of teachers
+              <h3
+                class="font-montserrat font-medium text-xl mb-2"
+                data-i18n="meetYourTutor.leftTwoh3"
+              >
+                Rodina učitelů
               </h3>
-              <p class="text-left font-montserrat">
-                Coming from a family of educators — my mother a mathematics
-                professor, my father an English tutor — I developed a passion
-                for teaching. Assisting in my father's classes confirmed that
-                teaching is my calling.
+              <p
+                class="text-left font-montserrat"
+                data-i18n="meetYourTutor.leftTwop"
+              >
+                Pocházím z pedagogické rodiny - moje matka byla profesorkou
+                matematiky, otec učil angličtinu - a tak jsem si vypěstoval
+                vášeň pro učení. Asistence v otcových hodinách mě utvrdila v
+                tom, že učení je mým posláním.
               </p>
             </div>
           </div>
@@ -224,14 +274,20 @@
               <i class="fa-solid fa-graduation-cap"></i>
             </div>
             <div>
-              <h3 class="font-montserrat font-medium text-xl mb-2">
+              <h3
+                class="font-montserrat font-medium text-xl mb-2"
+                data-i18n="meetYourTutor.leftThreeh3"
+              >
                 Global Perspective
               </h3>
-              <p class="text-left font-montserrat">
-                I'm completing my degree in International Relations at the
-                University of New York in Prague. My long-term goal is to teach
-                history or global affairs, but English tutoring remains a
-                passion I take seriously.
+              <p
+                class="text-left font-montserrat"
+                data-i18n="meetYourTutor.leftThreep"
+              >
+                Dokončuji studium mezinárodních vztahů na University of New York
+                v Praze. Mým dlouhodobým cílem je učit historii nebo globální
+                vztahy, ale doučování angličtiny zůstává mou vášní, kterou beru
+                vážně.
               </p>
             </div>
           </div>
@@ -239,30 +295,39 @@
 
         <!-- RIGHT COLUMN: Resume-style Work Experience -->
         <div class="flex-1 flex flex-col gap-6 font-montserrat">
-          <h3 class="font-montserrat font-medium text-center text-xl mb-2">
-            Teaching Experience
+          <h3
+            class="font-montserrat font-medium text-center text-xl mb-2"
+            data-i18n="meetYourTutor.righth3"
+          >
+            Zkušenosti s výukou
           </h3>
           <div
             class="bg-secondary rounded-xl p-6 text-black scale-100 transform transition-transform duration-300 hover:scale-105"
           >
             <div class="flex justify-between mb-2">
               <h4>
-                English Teacher
+                <span data-i18n="meetYourTutor.rightOneh4"
+                  >Učitel angličtiny
+                </span>
                 <span class="font-semibold">@ Education 4U</span>
               </h4>
-              <span class="text-sm font-light">Jan 2024 - Present</span>
+              <span class="text-sm font-light" data-i18n="rightOnespan"
+                >Leden 2024 - Současnost</span
+              >
             </div>
-            <p class="text-sm mb-2">
-              Taught English lessons for children aged 8-15 (A1-B2)
+            <p class="text-sm mb-2" data-i18n="meetYourTutor.rightOnep">
+              Výuka angličtiny pro děti ve věku 8-15 let (A1-B2)
             </p>
             <ul class="list-disc pl-5 text-sm font-light space-y-2">
-              <li>
-                Taught in Zakladni Skola Bitovska and EDUCAnet kindergarten
+              <li data-i18n="meetYourTutor.rightOneli1">
+                Výuka v mateřské škole Zakladni Skola Bitovska a EDUCAnet
               </li>
-              <li>
-                Created lesson materials and activities tailored to students
+              <li data-i18n="meetYourTutor.rightOneli2">
+                Vytvářel učební materiály a aktivity na míru studentům
               </li>
-              <li>Conducted online lessons through the LearnCube platform</li>
+              <li data-i18n="meetYourTutor.rightOneli3">
+                Vedení online výuky prostřednictvím platformy LearnCube
+              </li>
             </ul>
           </div>
 
@@ -271,18 +336,34 @@
           >
             <div class="flex justify-between mb-2">
               <h4>
-                Teaching Assistant
-                <span class="font-semibold">@ Private Practice</span>
+                <span data-i18n="meetYourTutor.rightTwoh4"
+                  >Asistent učitele
+                </span>
+                <span
+                  class="font-semibold"
+                  data-i18n="meetYourTutor.rightTwobold"
+                  >@ soukromá praxe</span
+                >
               </h4>
-              <span class="text-sm font-light">Jun 2023 - Aug 2023</span>
+              <span
+                class="text-sm font-light"
+                data-i18n="meetYourTutor.rightTwospan"
+                >Červen 2023 - Srpen 2023</span
+              >
             </div>
-            <p class="text-sm mb-2">
-              Internship with father, an English tutor in Montenegro
+            <p class="text-sm mb-2" data-i18n="meetYourTutor.rightTwop">
+              Stáž u otce, lektora angličtiny v Černé Hoře
             </p>
             <ul class="list-disc pl-5 text-sm font-light space-y-2">
-              <li>Assisted in lesson preparation and classroom management</li>
-              <li>Observed and later participated in live classes</li>
-              <li>Learned from 30+ years of teaching experience</li>
+              <li data-i18n="meetYourTutor.rightTwoli1">
+                Pomáhal při přípravě výuky a vedení třídy
+              </li>
+              <li data-i18n="meetYourTutor.rightTwoli2">
+                Pozorování a pozdější účast v živých hodinách
+              </li>
+              <li data-i18n="meetYourTutor.rightTwoli3">
+                Poznatky z více než 30 let praxe ve výuce
+              </li>
             </ul>
           </div>
         </div>
@@ -293,16 +374,24 @@
     <!-- Start of Why Choose Me section -->
     <section id="why-choose-me" class="sectionSize bg-secondary">
       <div>
-        <h2 class="secondaryTitle bg-underline3 bg-100%">Why Choose Me</h2>
+        <h2
+          class="secondaryTitle bg-underline3 bg-100%"
+          data-i18n="whyChooseMe.h2"
+        >
+          Proč si vybrat mě
+        </h2>
       </div>
-      <div class="md:grid md:grid-cols-2 md:grid-rows-2">
+      <div class="md:grid md:grid-cols-2 md:grid-rows-2 px-12">
         <div class="flex items-start font-montserrat my-6 mr-10">
           <i class="fa-solid fa-crown py-3 pr-4"></i>
           <div>
-            <h3 class="font-semibold text-2xl">Native English proficiency</h3>
-            <p>
-              Raised in a bilingual household speaking British English with my
-              father, originally from England, and Montenegrin with my mother.
+            <h3 class="font-semibold text-2xl" data-i18n="whyChooseMe.oneh3">
+              Znalost angličtiny na úrovni rodilého mluvčího
+            </h3>
+            <p data-i18n="whyChooseMe.onep">
+              Vyrůstala jsem ve dvojjazyčné domácnosti, kde se mluvilo britskou
+              angličtinou s mým otcem, původem z Anglie, a černohorsky s mou
+              matkou.
             </p>
           </div>
         </div>
@@ -310,11 +399,13 @@
         <div class="flex items-start font-montserrat my-6 mr-10">
           <i class="fa-solid fa-child-reaching py-3 pr-5"></i>
           <div>
-            <h3 class="font-semibold text-2xl">Experienced with all ages</h3>
-            <p>
-              I have taught students aged 4-17, adapting lessons to suit
-              different age groups and levels (A1-B2), both online and
-              in-person.
+            <h3 class="font-semibold text-2xl" data-i18n="whyChooseMe.twoh3">
+              Zkušenosti se všemi věkovými kategoriemi
+            </h3>
+            <p data-i18n="whyChooseMe.twop">
+              Učila jsem studenty ve věku 4-17 let a přizpůsobovala jsem výuku
+              různým věkovým skupinám a úrovním (A1-B2), a to jak online, tak
+              osobně.
             </p>
           </div>
         </div>
@@ -322,11 +413,13 @@
         <div class="flex items-start font-montserrat my-6 mr-10">
           <i class="fa-solid fa-globe py-3 pr-4"></i>
           <div>
-            <h3 class="font-semibold text-2xl">International Perspective</h3>
-            <p>
-              I am currently completing a degree in International Relations at
-              the University of New York in Prague, lending a global awareness
-              to my teaching.
+            <h3 class="font-semibold text-2xl" data-i18n="whyChooseMe.threeh3">
+              Mezinárodní perspektiva
+            </h3>
+            <p data-i18n="whyChooseMe.threep">
+              V současné době dokončuji studium mezinárodních vztahů na
+              University of New York v Praze, což přispívá ke globálnímu
+              povědomí o mé výuce.
             </p>
           </div>
         </div>
@@ -334,10 +427,12 @@
         <div class="flex items-start font-montserrat my-6 mr-10">
           <i class="fa-solid fa-language py-3 pr-4"></i>
           <div>
-            <h3 class="font-semibold text-2xl">Bilingual Experience</h3>
-            <p>
-              Thanks to my own bilingual upbringing, I understand first-hand how
-              best to help students bridge persistent language gaps.
+            <h3 class="font-semibold text-2xl" data-i18n="whyChooseMe.fourh3">
+              Dvojjazyčné zkušenosti
+            </h3>
+            <p data-i18n="whyChooseMe.fourp">
+              Díky vlastní dvojjazyčné výchově z první ruky vím, jak nejlépe
+              pomoci studentům překonat přetrvávající jazykové rozdíly.
             </p>
           </div>
         </div>
@@ -346,13 +441,16 @@
     <!-- End of Why Choose Me section -->
 
     <!-- Start of Lesson Options section -->
-    <section id="lesson-options" class="sectionSize bg-secondary py-0">
+    <section id="lesson-options" class="sectionSize bg-secondary">
       <div>
-        <h2 class="secondaryTitle bg-underline3 mb-0 bg-100%">
-          Lesson Options
+        <h2
+          class="secondaryTitle bg-underline3 mb-0 bg-100%"
+          data-i18n="nav.lessonOptions"
+        >
+          Možnosti lekcí
         </h2>
       </div>
-      <div class="flex w-3/4 flex-col md:flex-row">
+      <div class="flex w-full lg:w-3/4 flex-col md:flex-row">
         <div
           class="flex-1 flex flex-col mx-6 shadow-2xl relative bg-secondary rounded-2xl py-5 px-8 my-8 md:top-24 transform transition duration-300 hover:scale-105"
         >
@@ -364,22 +462,29 @@
 
           <div class="flex">
             <img src="dist/assets/logos/CheckedBox.svg" alt="" class="mr-1" />
-            <p>Convenient learning</p>
+            <p data-i18n="lessonOptions.onep1">Pohodlné učení</p>
           </div>
           <div class="flex">
             <img src="dist/assets/logos/CheckedBox.svg" alt="" class="mr-1" />
-            <p>Flexible scheduling</p>
+            <p data-i18n="lessonOptions.onep2">Flexibilní plánování</p>
           </div>
           <div class="flex">
             <img src="dist/assets/logos/CheckedBox.svg" alt="" class="mr-1" />
-            <p>Conducted via Zoom</p>
+            <p data-i18n="lessonOptions.onep3">
+              Prováděno prostřednictvím služby Zoom
+            </p>
           </div>
         </div>
 
         <div
           class="flex-1 flex flex-col mx-6 shadow-2xl relative bg-secondary rounded-2xl py-5 px-8 my-8 md:top-12 transform transition duration-300 hover:scale-105"
         >
-          <h3 class="font-pt-serif font-normal text-2xl mb-4">In Person</h3>
+          <h3
+            class="font-pt-serif font-normal text-2xl mb-4"
+            data-i18n="lessonOptions.twoh3"
+          >
+            Osobní návštěva
+          </h3>
           <div class="font-montserrat font-bold text-2xl mb-4">
             500 Kč
             <span class="font-normal text-base"> / 50 min</span>
@@ -387,15 +492,17 @@
 
           <div class="flex">
             <img src="dist/assets/logos/CheckedBox.svg" alt="" class="mr-1" />
-            <p>Maximized engagement</p>
+            <p data-i18n="lessonOptions.twop1">Maximální zapojení</p>
           </div>
           <div class="flex">
             <img src="dist/assets/logos/CheckedBox.svg" alt="" class="mr-1" />
-            <p>Ideal for younger children</p>
+            <p data-i18n="lessonOptions.twop2">Ideální pro mladší děti</p>
           </div>
           <div class="flex">
             <img src="dist/assets/logos/CheckedBox.svg" alt="" class="mr-1" />
-            <p>Conducted in Prague 3</p>
+            <p data-i18n="lessonOptions.twop3">
+              Umístění tříd, které je třeba projednat
+            </p>
           </div>
         </div>
       </div>
@@ -415,7 +522,9 @@
         />
       </div>
       <div>
-        <h2 class="secondaryTitle bg-underline3 bg-100%">Contact Me</h2>
+        <h2 class="secondaryTitle bg-underline3 bg-100%" data-i18n="contact.h2">
+          Kontakt
+        </h2>
       </div>
 
       <form
@@ -428,13 +537,16 @@
         <!-- Netlify spam protection -->
         <input type="hidden" name="form-name" value="contact" />
         <p class="hidden">
-          <label>Don’t fill this out: <input name="bot-field" /></label>
+          <label>Don't fill this out: <input name="bot-field" /></label>
         </p>
 
         <!-- Name -->
         <div class="mb-6">
-          <label for="name" class="block text-sm font-medium mb-2"
-            >Your Name</label
+          <label
+            for="name"
+            class="block text-sm font-medium mb-2"
+            data-i18n="contact.l1"
+            >Vaše jméno</label
           >
           <input
             type="text"
@@ -447,8 +559,11 @@
 
         <!-- Email -->
         <div class="mb-6">
-          <label for="email" class="block text-sm font-medium mb-2"
-            >Your Email</label
+          <label
+            for="email"
+            class="block text-sm font-medium mb-2"
+            data-i18n="contact.l2"
+            >Váš e-mail</label
           >
           <input
             type="email"
@@ -461,8 +576,11 @@
 
         <!-- Message -->
         <div class="mb-6">
-          <label for="message" class="block text-sm font-medium mb-2"
-            >Message</label
+          <label
+            for="message"
+            class="block text-sm font-medium mb-2"
+            data-i18n="contact.l3"
+            >Vzkaz</label
           >
           <textarea
             id="message"
@@ -477,8 +595,9 @@
         <button
           type="submit"
           class="bg-primary border border-black text-white px-6 py-3 rounded-lg scale-100 transform transition-transform duration-300 hover:scale-105"
+          data-i18n="contact.button"
         >
-          Send Message
+          Odeslat vzkaz
         </button>
       </form>
     </section>
@@ -489,16 +608,22 @@
       class="sectionSize items-start pt-8 md:pt-36 bg-primary text-white"
     >
       <div>
-        <h2 class="secondaryTitle bg-highlight3 p-10 mb-0 bg-center bg-100%">
-          FAQ
+        <h2
+          class="secondaryTitle p-2 mb-0 bg-center bg-100%"
+          data-i18n="faq.h2"
+        >
+          Často kladené otázky
         </h2>
       </div>
 
       <div toggleElement class="w-full py-4">
         <div class="flex justify-between items-center">
-          <div question class="font-montserrat font-medium mr-auto">
-            What makes these lessons different from language schools or big
-            platforms?
+          <div
+            question
+            class="font-montserrat font-medium mr-auto"
+            data-i18n="faq.q1"
+          >
+            V čem se tyto lekce liší od jazykových škol nebo velkých platforem?
           </div>
           <img
             src="dist/assets/logos/CaretRight.svg"
@@ -506,19 +631,27 @@
             class="transform transition-transform"
           />
         </div>
-        <div answer class="font-montserrat text-md font-extralight pb-8 hidden">
-          With one-on-one tutoring, your child gets focused attention every
-          minute of the session. Lessons are tailored to their specific pace,
-          level, and interests, which often means faster progress and more
-          confidence.
+        <div
+          answer
+          class="font-montserrat text-md font-extralight pb-8 hidden"
+          data-i18n="faq.a1"
+        >
+          Při individuálním doučování se vašemu dítěti dostane soustředěné
+          pozornosti každou minutu výuky. Lekce jsou přizpůsobeny jeho
+          specifickému tempu, úrovni a zájmům, což často znamená rychlejší
+          pokrok a větší sebedůvěru.
         </div>
       </div>
       <hr class="w-full bg-white" />
 
       <div toggleElement class="w-full py-4">
         <div class="flex justify-between items-center">
-          <div question class="font-montserrat font-medium mr-auto">
-            Do you offer packages or discounts for multiple lessons?
+          <div
+            question
+            class="font-montserrat font-medium mr-auto"
+            data-i18n="faq.q2"
+          >
+            Co když moje dítě ještě neumí anglicky?
           </div>
           <img
             src="dist/assets/logos/CaretRight.svg"
@@ -526,18 +659,26 @@
             class="transform transition-transform"
           />
         </div>
-        <div answer class="font-montserrat text-md font-extralight pb-8 hidden">
-          I offer simple pricing per session, but for long-term students I'm
-          happy to discuss monthly plans or a regular time slot with priority
-          booking.
+        <div
+          answer
+          class="font-montserrat text-md font-extralight pb-8 hidden"
+          data-i18n="faq.a2"
+        >
+          To je naprosto v pořádku! Mám zkušenosti s prací s dětmi, které jsou
+          úplní začátečníci a neumí ani slovo anglicky. Mluvím také trochu
+          česky, což může v případě potřeby pomoci zmírnit komunikační bariéru.
         </div>
       </div>
       <hr class="w-full bg-white" />
 
       <div toggleElement class="w-full py-4">
         <div class="flex justify-between items-center">
-          <div question class="font-montserrat font-medium mr-auto">
-            Do you offer group lessons or only one-on-one?
+          <div
+            question
+            class="font-montserrat font-medium mr-auto"
+            data-i18n="faq.q3"
+          >
+            Nabízíte skupinové lekce, nebo pouze individuální?
           </div>
           <img
             src="dist/assets/logos/CaretRight.svg"
@@ -545,9 +686,40 @@
             class="transform transition-transform"
           />
         </div>
-        <div answer class="font-montserrat text-md font-extralight pb-8 hidden">
+        <div
+          answer
+          class="font-montserrat text-md font-extralight pb-8 hidden"
+          data-i18n="faq.a3"
+        >
           At the moment, I focus on individual lessons to ensure each student
           gets my full attention. Group lessons may be possible in the future.
+        </div>
+      </div>
+      <hr class="w-full bg-white" />
+
+      <div toggleElement class="w-full py-4">
+        <div class="flex justify-between items-center">
+          <div
+            question
+            class="font-montserrat font-medium mr-auto"
+            data-i18n="faq.q4"
+          >
+            Nabízíte balíčky nebo slevy pro více lekcí?
+          </div>
+          <img
+            src="dist/assets/logos/CaretRight.svg"
+            alt=""
+            class="transform transition-transform"
+          />
+        </div>
+        <div
+          answer
+          class="font-montserrat text-md font-extralight pb-8 hidden"
+          data-i18n="faq.a4"
+        >
+          Nabízím jednoduché ceny za sezení, ale s dlouhodobými studenty ráda
+          prodiskutuji měsíční plány nebo pravidelný časový interval s
+          přednostní rezervací.
         </div>
       </div>
       <hr class="w-full bg-white" />
@@ -585,12 +757,81 @@
       <div
         class="w-full flex justify-between items-center text-white font-montserrat text-sm"
       >
-        <p>© 2025 Charles Turner. All rights reserved.</p>
+        <p data-i18n="footer.copy">
+          © 2025 Charles Turner. Všechna práva vyhrazena.
+        </p>
         <a href="https://nadjastojanovic.dev" target="_blank">
-          Design by
+          <span data-i18n="footer.credit">Navrhla </span>
           <span class="text-muted hover:underline">Nađa Stojanović</span>
         </a>
       </div>
     </section>
+
+    <script src="dist/translations.js" defer></script>
+
+    <script>
+      const toggle = document.getElementById("langToggle");
+      const ball = document.getElementById("toggleBall");
+      let currentLang = "cs"; // default: Czech
+
+      // Helper to resolve "nav.about" → translations[lang]["nav"]["about"]
+      function getTranslation(lang, keyPath) {
+        return keyPath
+          .split(".")
+          .reduce((obj, key) => obj?.[key], window.translations?.[lang]);
+      }
+
+      function updateToggleUI(lang) {
+        if (lang === "cs") {
+          toggle.classList.remove("bg-gray");
+          toggle.classList.add("bg-primary");
+          ball.classList.remove("left-0.5");
+          ball.classList.add("right-0.5");
+        } else {
+          toggle.classList.remove("bg-primary");
+          toggle.classList.add("bg-gray");
+          ball.classList.remove("right-0.5");
+          ball.classList.add("left-0.5");
+        }
+      }
+
+      function translatePage(lang) {
+        const elements = document.querySelectorAll("[data-i18n]");
+        elements.forEach((el) => {
+          const key = el.getAttribute("data-i18n");
+          const text = getTranslation(lang, key);
+          if (text) el.textContent = text;
+        });
+      }
+
+      function switchLanguage() {
+        currentLang = currentLang === "cs" ? "en" : "cs";
+        updateToggleUI(currentLang);
+        translatePage(currentLang);
+      }
+
+      toggle.addEventListener("click", switchLanguage);
+    </script>
+
+    <script>
+      const toggleMobile = document.getElementById("langToggleMobile");
+      const ballMobile = document.getElementById("toggleBallMobile");
+      let isCheckedMobile = true;
+
+      toggleMobile.addEventListener("click", () => {
+        isCheckedMobile = !isCheckedMobile;
+        if (isCheckedMobile) {
+          toggleMobile.classList.remove("bg-gray");
+          toggleMobile.classList.add("bg-primary");
+          ballMobile.classList.remove("left-0.5");
+          ballMobile.classList.add("right-0.5");
+        } else {
+          toggleMobile.classList.remove("bg-primary");
+          toggleMobile.classList.add("bg-gray");
+          ballMobile.classList.remove("right-0.5");
+          ballMobile.classList.add("left-0.5");
+        }
+      });
+    </script>
   </body>
 </html>
