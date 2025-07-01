@@ -640,6 +640,13 @@ video {
   line-height: 2.25rem;
 }
 
+@media (max-width: 991.98px){
+  .secondaryTitle {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
 .sr-only{
   position: absolute;
   width: 1px;
