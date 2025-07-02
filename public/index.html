@@ -24,12 +24,11 @@
     <meta name="author" content="Charles Turner" />
     <meta name="robots" content="index, follow" />
 
-    <link rel="icon" href="favicon.ico" />
+    <link rel="icon" href="dist/assets/favicon.ico" />
     <!-- TO CHANGE: update favicon -->
 
     <!-- imports -->
     <link rel="stylesheet" href="dist/styles.css" />
-    <link rel="stylesheet" href="/src/styles.css" />
     <script src="dist/script.js"></script>
     <script
       src="https://kit.fontawesome.com/cb818d3866.js"
@@ -780,6 +779,8 @@
     <script>
       const toggle = document.getElementById("langToggle");
       const ball = document.getElementById("toggleBall");
+      const toggleMobile = document.getElementById("langToggleMobile");
+      const ballMobile = document.getElementById("toggleBallMobile");
       let currentLang = "cs";
 
       function getTranslation(lang, keyPath) {
@@ -794,49 +795,17 @@
           toggle.classList.add("bg-primary");
           ball.classList.remove("left-0.5");
           ball.classList.add("right-0.5");
-        } else {
-          toggle.classList.remove("bg-primary");
-          toggle.classList.add("bg-gray");
-          ball.classList.remove("right-0.5");
-          ball.classList.add("left-0.5");
-        }
-      }
 
-      function translatePage(lang) {
-        const elements = document.querySelectorAll("[data-i18n]");
-        elements.forEach((el) => {
-          const key = el.getAttribute("data-i18n");
-          const text = getTranslation(lang, key);
-          if (text) el.textContent = text;
-        });
-      }
-
-      function switchLanguage() {
-        currentLang = currentLang === "cs" ? "en" : "cs";
-        updateToggleUI(currentLang);
-        translatePage(currentLang);
-      }
-
-      toggle.addEventListener("click", switchLanguage);
-    </script>
-
-    <script>
-      const toggleMobile = document.getElementById("langToggleMobile");
-      const ballMobile = document.getElementById("toggleBallMobile");
-
-      function getTranslation(lang, keyPath) {
-        return keyPath
-          .split(".")
-          .reduce((obj, key) => obj?.[key], window.translations?.[lang]);
-      }
-
-      function updateToggleUI(lang) {
-        if (lang === "cs") {
           toggleMobile.classList.remove("bg-gray");
           toggleMobile.classList.add("bg-primary");
           ballMobile.classList.remove("left-0.5");
           ballMobile.classList.add("right-0.5");
         } else {
+          toggle.classList.remove("bg-primary");
+          toggle.classList.add("bg-gray");
+          ball.classList.remove("right-0.5");
+          ball.classList.add("left-0.5");
+
           toggleMobile.classList.remove("bg-primary");
           toggleMobile.classList.add("bg-gray");
           ballMobile.classList.remove("right-0.5");
@@ -859,6 +828,7 @@
         translatePage(currentLang);
       }
 
+      toggle.addEventListener("click", switchLanguage);
       toggleMobile.addEventListener("click", switchLanguage);
     </script>
   </body>

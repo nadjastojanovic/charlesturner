@@ -21,6 +21,10 @@
   border-color: black;
 }
 
+.bg-gray {
+  background-color: #ccc;
+}
+
 .growing-underline {
   display: block;
   position: relative;
