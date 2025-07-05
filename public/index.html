@@ -194,6 +194,19 @@
           alt=""
           class="absolute -bottom-8 md:-bottom-6 lg:-bottom-6 right-12 lg:right-20 md:right-20 w-8 md:w-16 lg:w-16 md:w-auto"
         />
+        <button
+          id="audioToggle"
+          class="absolute w-50 h-50 z-20 top-8 right-24 transform -translate-x-1/2 bg-black text-white w-16 h-16 rounded-full shadow-lg transition-all duration-300 hover:scale-105"
+          aria-label="Play introduction"
+        >
+          <i id="audioIcon" class="fas fa-play text-xl"></i>
+          <span
+            id="audioPulse"
+            class="absolute inset-0 rounded-full border-2 border-primary opacity-0 animate-none"
+          ></span>
+        </button>
+
+        <audio id="introAudio" src="dist/assets/placeholder.mp3"></audio>
       </div>
     </section>
 
@@ -825,6 +838,41 @@
 
       toggle.addEventListener("click", switchLanguage);
       toggleMobile.addEventListener("click", switchLanguage);
+    </script>
+
+    <script>
+      const audioBtn = document.getElementById("audioToggle");
+      const audioIcon = document.getElementById("audioIcon");
+      const pulse = document.getElementById("audioPulse");
+      const audio = document.getElementById("introAudio");
+
+      let isPlaying = false;
+
+      audioBtn.addEventListener("click", () => {
+        if (isPlaying) {
+          audio.pause();
+        } else {
+          audio.play();
+        }
+      });
+
+      audio.addEventListener("play", () => {
+        isPlaying = true;
+        audioIcon.classList.replace("fa-play", "fa-pause");
+        pulse.classList.add("animate-pulse-ring", "opacity-100");
+      });
+
+      audio.addEventListener("pause", () => {
+        isPlaying = false;
+        audioIcon.classList.replace("fa-pause", "fa-play");
+        pulse.classList.remove("animate-pulse-ring", "opacity-100");
+      });
+
+      audio.addEventListener("ended", () => {
+        isPlaying = false;
+        audioIcon.classList.replace("fa-pause", "fa-play");
+        pulse.classList.remove("animate-pulse-ring", "opacity-100");
+      });
     </script>
   </body>
 </html>
