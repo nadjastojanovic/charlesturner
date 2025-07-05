@@ -7,7 +7,7 @@ const translations = {
     },
     hero: {
       h1: "Výuka angličtiny s rodilým mluvčím v Praze",
-      p: "Individuální lekce angličtiny pro děti a dospívající, které kombinují strukturovaný přístup s individuální podporou a pomáhají studentům rozvíjet se plynule a sebejistě.",
+      p: "Individuální lekce angličtiny pro děti a dospívající, které kombinují strukturovaný přístup s individuální podporou.",
     },
     meetYourTutor: {
       h2: "Seznamte se se svým učitelem",
@@ -19,17 +19,17 @@ const translations = {
         "Pocházím z pedagogické rodiny - moje matka byla profesorkou matematiky, otec učil angličtinu - a tak jsem si vypěstoval vášeň pro učení. Asistence v otcových hodinách mě utvrdila v tom, že učení je mým posláním.",
       leftThreeh3: "Globální perspektiva",
       leftThreep:
-        "Dokončuji studium mezinárodních vztahů na University of New York v Praze. Mým dlouhodobým cílem je učit historii nebo globální vztahy, ale doučování angličtiny zůstává mou vášní, kterou beru vážně.",
+        "Dokončuji studium mezinárodních vztahů na University of New York v Praze. Mým dlouhodobým cílem je učit historii nebo globální vztahy.",
       righth3: "Zkušenosti s výukou",
       rightOneh4: "Učitel angličtiny",
-      rightOnespan: "Leden 2024 - Současnost",
+      rightOnespan: "Leden '24 - Současnost",
       rightOnep: "Výuka angličtiny pro děti ve věku 8-15 let (A1-B2)",
       rightOneli1: "Výuka v mateřské škole Zakladni Skola Bitovska a EDUCAnet",
       rightOneli2: "Vytvářel učební materiály a aktivity na míru studentům",
       rightOneli3: "Vedení online výuky prostřednictvím platformy LearnCube",
       rightTwoh4: "Asistent učitele",
       rightTwobold: "@ Soukromá praxe",
-      rightTwospan: "Červen 2023 - Srpen 2023",
+      rightTwospan: "Červen - Srpen '23",
       rightTwop: "Stáž u otce, lektora angličtiny v Černé Hoře",
       rightTwoli1: "Pomáhal při přípravě výuky a vedení třídy",
       rightTwoli2: "Pozorování a pozdější účast v živých hodinách",
@@ -38,12 +38,12 @@ const translations = {
     whyChooseMe: {
       h2: "Proč si vybrat mě",
       oneh3: "Znalost angličtiny na úrovni rodilého mluvčího",
-      onep: "Vyrůstala jsem ve dvojjazyčné domácnosti, kde se mluvilo britskou angličtinou s mým otcem, původem z Anglie, a černohorsky s mou matkou.",
+      onep: "Vyrůstal jsem ve dvojjazyčné domácnosti, kde se mluvilo britskou angličtinou s mým otcem, a černohorsky s mojí matkou.",
       twoh3: "Zkušenosti se všemi věkovými kategoriemi",
-      twop: "Učila jsem studenty ve věku 4-17 let a přizpůsobovala jsem výuku různým věkovým skupinám a úrovním (A1-B2), a to jak online, tak osobně.",
+      twop: "Učil jsem studenty ve věku 4-17 let a přizpůsoboval jsem výuku různým věkovým skupinám a úrovním (A1-B2) - jak online, tak osobně.",
       threeh3: "Mezinárodní perspektiva",
       threep:
-        "V současné době dokončuji studium mezinárodních vztahů na University of New York v Praze, což přispívá ke globálnímu povědomí o mé výuce.",
+        "V současné době dokončuji studium mezinárodních vztahů na University of New York v Praze, což přispívá ke globálnímu povědomí mé výuce.",
       fourh3: "Dvojjazyčné zkušenosti",
       fourp:
         "Díky vlastní dvojjazyčné výchově z první ruky vím, jak nejlépe pomoci studentům překonat přetrvávající jazykové rozdíly.",
@@ -88,7 +88,7 @@ const translations = {
     },
     hero: {
       h1: "English lessons with a native speaker in Prague",
-      p: "One-on-one English lessons for children and teens, combining a structured approach with personalized support to help students grow fluently and confidently.",
+      p: "One-on-one English lessons for children and teens, combining a structured approach with personalized support.",
     },
     meetYourTutor: {
       h2: "Meet your tutor",
@@ -100,10 +100,10 @@ const translations = {
         "Coming from a family of educators — my mother a mathematics professor, my father an English tutor — I developed a passion for teaching. Assisting in my father's classes confirmed that teaching is my calling.",
       leftThreeh3: "Global perspective",
       leftThreep:
-        "I'm completing my degree in International Relations at the University of New York in Prague. My long-term goal is to teach history or global affairs, but English tutoring remains a passion I take seriously.",
+        "I'm completing my degree in International Relations at the University of New York in Prague. My long-term goal is to teach history or global affairs.",
       righth3: "Teaching experience",
       rightOneh4: "English teacher",
-      rightOnespan: "Jan 2024 - Present",
+      rightOnespan: "Jan '24 - Present",
       rightOnep: "Taught English lessons for children aged 8-15 (A1-B2)",
       rightOneli1:
         "Taught in Zakladni Skola Bitovska and EDUCAnet kindergarten",
@@ -112,7 +112,7 @@ const translations = {
       rightOneli3: "Conducted online lessons through the LearnCube platform",
       rightTwoh4: "Teaching assistant",
       rightTwobold: "@ Private practice",
-      rightTwospan: "Jun 2023 - Aug 2023",
+      rightTwospan: "Jun - Aug '23",
       rightTwop: "Internship with father, an English tutor in Montenegro",
       rightTwoli1: "Assisted in lesson preparation and classroom management",
       rightTwoli2: "Observed and later participated in live classes",
